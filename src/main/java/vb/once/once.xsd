@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://once.vb/once"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://once.vb/once" elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+	<xsd:import namespace="http://www.springframework.org/schema/beans"
+		 />
+	<xsd:element name="import">
+		<xsd:annotation>
+			<xsd:documentation source="java:org.springframework.core.io.Resource"><![CDATA[
+	Specifies an XML bean definition resource to import.
+			]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="xsd:anyType">
+					<xsd:attribute name="resource" type="xsd:string" use="required">
+						<xsd:annotation>
+							<xsd:documentation><![CDATA[
+	The relative resource location of the XML (bean definition) file to import,
+	for example "myImport.xml" or "includes/myImport.xml" or "../myImport.xml".
+							]]></xsd:documentation>
+						</xsd:annotation>
+					</xsd:attribute>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+</schema>

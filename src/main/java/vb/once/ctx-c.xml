@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:c="http://www.springframework.org/schema/c"
+xmlns:o="http://once.vb/once"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://once.vb/once http://once.vb/once/once.xsd
+    http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+   <bean id="c0" class="vb.once.Marker" c:name="c0"/>
+   <o:import resource="classpath:vb/once/ctx-d.xml"/>
+   <bean id="c" class="vb.once.Marker" c:name="c"/>
+</beans>

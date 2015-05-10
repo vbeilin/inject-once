@@ -1,0 +1,25 @@
+apply plugin: 'eclipse'
+apply plugin: 'java'
+
+configurations{
+  provided
+}
+
+sourceSets.main.compileClasspath +=  [configurations.provided]
+sourceSets.test.compileClasspath +=  [configurations.provided]
+// optional: if using 'eclipse' plugin
+eclipse.classpath.plusConfigurations += [configurations.provided] 
+
+repositories { mavenCentral() }
+
+def junit_version = '4.11'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	provided 'org.projectlombok:lombok:1.14.6'
+  compile 'com.google.inject:guice:3.0'
+  compile 'org.springframework:spring-beans:4.1.2.RELEASE'
+  compile 'org.springframework:spring-context:4.1.2.RELEASE'
+  testCompile 'junit:junit:' + junit_version
+}
